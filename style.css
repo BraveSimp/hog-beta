@@ -1,0 +1,136 @@
+* {
+  background-color: #101;
+
+  color: #eee;
+  font-family: sans-serif;
+}
+/* ↓ removes disgusting selection of text ↓ */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button {
+  /* we add social distancing to the buttons */
+  margin-right: 4px;
+  margin-bottom: 4px;
+  /* we make the border of the buttons hot */
+  border: 1.5px solid white;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+button:hover {
+  background: white;
+  color: #101;
+}
+#hog-counters {
+  font-size: 14.2px;
+}
+#deliver-package-btn {
+  transition: all 0.2 ease-in-out;
+  font-size: 10px;
+}
+#deliver-package-btn:hover {
+  transform: scale(1.1);
+}
+#deliver-package-btn:active {
+  transform: scale(0.99);
+}
+.hog-button {
+  border-radius: 100px;
+  width: 100%;
+}
+.currencies-progressbar-newsticker {
+  display: flex;
+  justify-content: center;
+}
+html,
+body,
+.grid-container {
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 27.5% 43% 27.5%;
+  grid-template-rows: 13.58% 69.42% 15%;
+  gap: 1% 1%;
+  grid-template-areas:
+    "package-making- currencies-progressbar-newsticker hogs"
+    "package-making-buildings main-menu hog-buildings"
+    "saving-stuffs prestiging WIP";
+}
+.hog-buildings {
+  grid-area: hog-buildings;
+}
+
+.hogs {
+  grid-area: hogs;
+}
+
+.currencies-progressbar-newsticker {
+  grid-area: currencies-progressbar-newsticker;
+}
+
+.main-menu {
+  display: grid;
+  grid-template-columns: 51.7% 48.3%;
+  grid-template-rows: 6.9% 93.1%;
+  gap: 0px 0px;
+  grid-template-areas:
+    "upgrades ahievements"
+    ". .";
+  grid-area: main-menu;
+}
+
+.upgrades {
+  grid-area: upgrades;
+}
+
+.ahievements {
+  grid-area: ahievements;
+}
+
+.prestiging {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+  gap: 0px 0px;
+  grid-template-areas:
+    "prestiging-stats"
+    "prestiging-button";
+  grid-area: prestiging;
+}
+
+.prestiging-button {
+  grid-area: prestiging-button;
+}
+
+.prestiging-stats {
+  grid-area: prestiging-stats;
+}
+
+.package-making- {
+  grid-area: package-making-;
+}
+
+.package-making-buildings {
+  grid-area: package-making-buildings;
+}
+
+.saving-stuffs {
+  grid-area: saving-stuffs;
+}
+
+.WIP {
+  grid-area: WIP;
+}
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid rgb(69, 69, 69);
+  position: relative;
+}
