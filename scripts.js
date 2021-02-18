@@ -4,7 +4,7 @@ const packagesDeliveredP = document.querySelector("#packages-delivered-p");
 const packagesDeliveredBtn = document.querySelector("#deliver-package-btn");
 const hogCounters = document.querySelector("#hog-counters"); //hog-buttons
 const hogButtons = document.querySelector("#hog-buttons");
-
+const savingButton = document.querySelector("saving-button");
 // beautyfunction
 function beautify(num) {
   return num > 100000 ? num.toExponential() : num;
@@ -13,6 +13,7 @@ function beautify(num) {
 // ↓ Game Variables ( variables used in the game duh) ↓
 let packagesDelivered = 0;
 
+// saving stuffs
 const saveGame = () => {
   const gameSave = {
     packagesDelivered,
@@ -31,6 +32,11 @@ function loadSave() {
   for (const hogId in gameSave.hogTypes)
     hogTypes[hogId].amount = gameSave.hogTypes[hogId].amount;
 }
+
+savingButton.addEventListener("click", () => {
+  saveGame();
+});
+
 // hog type OOP shit
 const hogTypes = [];
 
@@ -101,7 +107,7 @@ new HogType("Fifth Hog");
 new HogType("Sixth Hog");
 new HogType("Seventh Hog");
 new HogType("Eighth Hog");
-
+new HogType("1 H0G 2 rul dem aLL!1!");
 // Game Loop
 window.setInterval(() => {
   autoPackageDeliver();
