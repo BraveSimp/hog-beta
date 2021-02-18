@@ -32,6 +32,7 @@ button:hover {
 #deliver-package-btn {
   transition: all 0.2 ease-in-out;
   font-size: 10px;
+  height: 30px;
 }
 #deliver-package-btn:hover {
   transform: scale(1.1);
@@ -39,14 +40,14 @@ button:hover {
 #deliver-package-btn:active {
   transform: scale(0.99);
 }
+#saving-button {
+  width: 100%;
+}
 .hog-button {
   border-radius: 100px;
   width: 100%;
 }
-.currencies-progressbar-newsticker {
-  display: flex;
-  justify-content: center;
-}
+
 html,
 body,
 .grid-container {
@@ -57,7 +58,7 @@ body,
   display: grid;
   grid-template-columns: 27.5% 43% 27.5%;
   grid-template-rows: 13.58% 69.42% 15%;
-  gap: 1% 1%;
+  gap: 1% 0.5%;
   grid-template-areas:
     "package-making- currencies-progressbar-newsticker hogs"
     "package-making-buildings main-menu hog-buildings"
@@ -130,7 +131,7 @@ body,
 }
 
 /* For presentation only, no need to copy the code below */
-.grid-container * {
+.grid-container > * {
   border: 1px solid rgb(69, 69, 69);
   position: relative;
 }
