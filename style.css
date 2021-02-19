@@ -43,6 +43,10 @@ button:hover {
 #saving-button {
   width: 100%;
 }
+.currencies-progressbar-newsticker {
+  display: flex;
+  justify-content: center;
+}
 .hog-button {
   border-radius: 100px;
   width: 100%;
