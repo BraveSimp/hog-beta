@@ -42,10 +42,11 @@ button:hover {
 }
 #saving-button {
   width: 100%;
+  height: 25px;
+  border-radius: 100em;
 }
 .currencies-progressbar-newsticker {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 .hog-button {
   border-radius: 100px;
