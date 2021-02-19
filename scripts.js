@@ -4,7 +4,7 @@ const packagesDeliveredP = document.querySelector("#packages-delivered-p");
 const packagesDeliveredBtn = document.querySelector("#deliver-package-btn");
 const hogCounters = document.querySelector("#hog-counters"); //hog-buttons
 const hogButtons = document.querySelector("#hog-buttons");
-const savingButton = document.querySelector("saving-button");
+const savingButton = document.querySelector("#saving-button");
 // beautyfunction
 function beautify(num) {
   return num > 100000 ? num.toExponential() : num;
