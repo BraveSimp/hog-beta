@@ -1,9 +1,14 @@
 // ↓ dont look at that pls ↓
 //  DocumentObjectModel Variables ( connection variables)
-const packagesDeliveredP = document.querySelector("#packages-delivered-p");
+const packagesDeliveredP = document.querySelector("#packages-delivered-div");
 const packagesDeliveredBtn = document.querySelector("#deliver-package-btn");
 const hogButtons = document.querySelector("#hog-buttons");
 const savingButton = document.querySelector("#saving-button");
+const clearGameButton = document.querySelector("#clearing-game-button");
+const packagesPerSecondP = document.querySelector(
+  "#packages-delivered-per-second"
+);
+
 // beautyfunction
 function beautify(num) {
   return num > 100000 ? num.toExponential(2) : num;
@@ -11,6 +16,7 @@ function beautify(num) {
 
 // ↓ Game Variables ( variables used in the game duh) ↓
 let packagesDelivered = 0;
+let packagesPerSecond = 0;
 
 // saving stuffs
 const saveGame = () => {
@@ -22,9 +28,9 @@ const saveGame = () => {
 };
 function loadSave() {
   var saveData = localStorage.getItem("Hogs of Gods");
-  console.log(saveData);
+  //console.log(saveData);
   if (!saveData) return;
-  console.log(saveData);
+  //console.log(saveData);
 
   const gameSave = JSON.parse(atob(localStorage["Hogs of Gods"]));
   packagesDelivered = gameSave.packagesDelivered;
@@ -36,6 +42,14 @@ savingButton.addEventListener("click", () => {
   saveGame();
 });
 
+clearGameButton.addEventListener("click", () => {
+  clearGame();
+});
+
+const clearGame = () => {
+  localStorage.clear();
+  location.reload();
+};
 // hog type OOP shit
 const hogTypes = [];
 
@@ -49,7 +63,7 @@ class HogType {
     this.id = hogTypes.length;
     // Initialize some stuff
     this.name = name;
-    this.cost = 5 * 25 ** this.id;
+    this.cost = 5 * 30 ** this.id;
     this.amount = 0;
     // Append self to body
     this.buyButton = document.createElement("button");
@@ -78,15 +92,16 @@ class HogType {
 const autoPackageDeliver = () => {
   for (const hogType of hogTypes) hogType.applyGains();
 };
+
 const updateUI = () => {
   packagesDeliveredP.innerHTML = `Packages delivered: ${beautify(
     packagesDelivered
   )}`;
+  packagesPerSecondP.innerHTML = `Packages delivered per second: ${beautify(
+    hogTypes[0].amount
+  )}`;
   for (const hogType of hogTypes) hogType.updateUI();
 };
-//const autoPackagesPerSecond = () => {
-//packagesPerSecond = "First Hog";
-//};
 
 // Event listener
 packagesDeliveredBtn.addEventListener("click", () => {
