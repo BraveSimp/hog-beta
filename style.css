@@ -42,8 +42,16 @@ button:hover {
 }
 #saving-button {
   width: 100%;
-  height: 25px;
+  height: 33px;
   border-radius: 100em;
+}
+#clearing-game-button {
+  width: 100%;
+  height: 33px;
+  border-radius: 100em;
+}
+#packages-delivered-per-second {
+  font-size: 12px;
 }
 .currencies-progressbar-newsticker {
   text-align: center;
